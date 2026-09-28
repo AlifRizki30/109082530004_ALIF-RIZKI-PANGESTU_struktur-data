@@ -340,7 +340,7 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com//AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/REPOSITORI STRUKTUR DATA/output/output-soal1.png)
+![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/output/output-soal1.png)
 
 Program ini digunakan untuk menerima dua bilangan bertipe float, kemudian menghitung penjumlahan, pengurangan, perkalian, dan pembagian. Bagian if (b != 0) digunakan untuk mengecek agar bilangan kedua tidak bernilai 0 sebelum melakukan pembagian.
 
@@ -392,7 +392,7 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com//AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/REPOSITORI STRUKTUR DATA/output/output-soal2.png)
+![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/output/output-soal2.png)
 
 Program ini menerima angka 0–100, kemudian mengubahnya menjadi bentuk tulisan. Array satuan digunakan untuk menyimpan nama angka, sedangkan percabangan if-else menentukan bentuk tulisan berdasarkan nilai angka, misalnya 15 menjadi lima belas dan 79 menjadi tujuh puluh sembilan
 
@@ -434,7 +434,7 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com//AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/REPOSITORI STRUKTUR DATA/output/output-soal3.png)
+![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/output/output-soal3.png)
 
 Program ini digunakan untuk membuat pola angka berbentuk mirror. Perulangan for pertama mengatur jumlah baris, sedangkan for berikutnya digunakan untuk mencetak angka dari belakang ke depan dan dari depan ke belakang. Bagian cout << " * " digunakan sebagai tanda * di tengah pola, sementara perulangan spasi membuat bentuk pola semakin menjorok ke kanan.
 
