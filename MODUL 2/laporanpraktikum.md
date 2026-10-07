@@ -82,7 +82,7 @@ int main(){
     return 0;
 }```
 
-Program ini digunakan untuk menampilkan tulisan Hello World sebagai contoh program dasar C++.
+Program ini digunakan untuk menginput 5 nilai siswa dan menampilkan data nilai dalam array 2 dimensi menggunakan perulangan for.
 
 ### 2. 
 
@@ -107,7 +107,8 @@ return 0;
 }
 ```
 
-Program ini menghitung nilai z menggunakan operasi penjumlahan dan pembagian.
+Program ini menunjukkan **penggunaan pointer** untuk menyimpan alamat variabel x dan mengambil nilainya melalui px, kemudian menyimpannya ke variabel y.
+
 
 ### 3. 
 
@@ -138,7 +139,7 @@ return (temp_max);
 }
 ```
 
-Program ini menunjukkan penggunaan pre-increment ++r, yaitu nilai r ditambah 1 terlebih dahulu sebelum digunakan.
+Program ini digunakan untuk mencari nilai terbesar dari tiga bilangan dengan menggunakan fungsi maks3().
 
 ### 4. Percabangan If-Else
 
@@ -164,7 +165,8 @@ void tulis(int x){
 }
 ```
 
-Program ini menentukan diskon 5% jika total pembelian minimal Rp100.000.
+Program ini digunakan untuk menampilkan beberapa baris kata sesuai jumlah yang dimasukkan, dengan menggunakan fungsi tulis().
+
 
 ### 5. 
 
@@ -200,7 +202,8 @@ void tukar(int x, int y){
 }
 ```
 
-Program ini menentukan apakah kode hari yang dimasukkan termasuk hari kerja atau hari libur menggunakan switch-case.
+Program ini menunjukkan pertukaran nilai menggunakan fungsi tukar() dengan parameter nilai (call by value), sehingga nilai a dan b di main() tetap sama.
+
 
 
 ## Unguided
@@ -279,49 +282,56 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/output/output-soal1.png)
+![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL%202/OUTPUT/OUTPUT%201%20M2.png)
 
-Program ini digunakan untuk menerima dua bilangan bertipe float, kemudian menghitung penjumlahan, pengurangan, perkalian, dan pembagian. Bagian if (b != 0) digunakan untuk mengecek agar bilangan kedua tidak bernilai 0 sebelum melakukan pembagian.
+Program ini digunakan untuk melakukan penjumlahan, pengurangan, dan perkalian dua matriks berukuran 3×3, lalu menampilkan hasilnya.
 
-### 2. (Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di-input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100)
+
+### 2. (Berdasarkan guided pointer dan reference sebelumnya, buatlah keduanya dapat menukar nilai dari 3 variabel.)
 
 ```C++
 #include <iostream>
 using namespace std;
 
+void tukarPointer(int *a, int *b, int *c) {
+    int temp;
+
+    temp = *a;
+    *a = *b;
+    *b = *c;
+    *c = temp;
+}
+
+void tukarReference(int &a, int &b, int &c) {
+    int temp;
+
+    temp = a;
+    a = b;
+    b = c;
+    c = temp;
+}
+
 int main() {
-    int angka;
+    int a = 10, b = 20, c = 30;
 
-    cout << "Masukkan angka (0-100): ";
-    cin >> angka;
+    cout << "Nilai awal:\n";
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+    cout << "c = " << c << endl;
 
-    string satuan[] = {
-        "nol", "satu", "dua", "tiga", "empat",
-        "lima", "enam", "tujuh", "delapan", "sembilan",
-        "sepuluh", "sebelas"
-    };
+    tukarPointer(&a, &b, &c);
 
-    if (angka >= 0 && angka <= 11) {
-        cout << satuan[angka] << endl;
-    }
-    else if (angka < 20) {
-        cout << satuan[angka - 10] << " belas" << endl;
-    }
-    else if (angka < 100) {
-        cout << satuan[angka / 10] << " puluh";
+    cout << "\nSetelah ditukar menggunakan pointer:\n";
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+    cout << "c = " << c << endl;
 
-        if (angka % 10 != 0) {
-            cout << " " << satuan[angka % 10];
-        }
+    tukarReference(a, b, c);
 
-        cout << endl;
-    }
-    else if (angka == 100) {
-        cout << "seratus" << endl;
-    }
-    else {
-        cout << "Angka harus 0-100" << endl;
-    }
+    cout << "\nSetelah ditukar menggunakan reference:\n";
+    cout << "a = " << a << endl;
+    cout << "b = " << b << endl;
+    cout << "c = " << c << endl;
 
     return 0;
 }
@@ -331,39 +341,107 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/output/output-soal2.png)
+![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL%202/OUTPUT/OUTPUT%202%20M2.png)
 
-Program ini menerima angka 0–100, kemudian mengubahnya menjadi bentuk tulisan. Array satuan digunakan untuk menyimpan nama angka, sedangkan percabangan if-else menentukan bentuk tulisan berdasarkan nilai angka, misalnya 15 menjadi lima belas dan 79 menjadi tujuh puluh sembilan
+Program ini digunakan untuk menukar nilai tiga variabel menggunakan pointer dan reference, lalu menampilkan hasil pertukarannya.
 
-### 3. (isi dengan soal unguided 3)
+
+### 3. (Buatlah program yang dapat mencari nilai minimum, maksimum, dan rata – rata dari array tersebut! Kerjakan soal dengan ketentuan )
 
 ```C++
 #include <iostream>
 using namespace std;
 
-int main() {
-    int n;
+#define MAX 10
 
-    cout << "Input: ";
-    cin >> n;
+int nilaiMaksimum(int arr[], int n) {
+    int maks = arr[0];
 
-    cout << "Output:" << endl;
-
-    for (int i = n; i >= 1; i--) {
-
-        for (int j = n; j > i; j--) {
-            cout << " ";
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > maks) {
+            maks = arr[i];
         }
-        for (int j = i; j >= 1; j--) {
-            cout << j;
-        }
-        cout << " * ";
-        for (int j = 1; j <= i; j++) {
-            cout << j;
-        }
-
-        cout << endl;
     }
+
+    return maks;
+}
+
+int nilaiMinimum(int arr[], int n) {
+    int min = arr[0];
+
+    for (int i = 1; i < n; i++) {
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+
+    return min;
+}
+
+void hitungRataRata(int arr[], int n, float &rata) {
+    int jumlah = 0;
+
+    for (int i = 0; i < n; i++) {
+        jumlah += arr[i];
+    }
+
+    rata = (float)jumlah / n;
+}
+
+void tampilArray(int arr[], int n) {
+    cout << "Isi Array: ";
+
+    for (int i = 0; i < n; i++) {
+        cout << arr[i] << " ";
+    }
+
+    cout << endl;
+}
+
+int main() {
+    int arr[MAX] = {48, 2, 7, 21, 5, 20, 77, 9, 10, 1};
+    int pilihan;
+    float rata;
+
+    do {
+        cout << "\n--- Menu Program Array ---\n";
+        cout << "1. Tampilkan isi array\n";
+        cout << "2. Cari nilai maksimum\n";
+        cout << "3. Cari nilai minimum\n";
+        cout << "4. Hitung nilai rata-rata\n";
+        cout << "5. Keluar\n";
+        cout << "Pilih menu: ";
+        cin >> pilihan;
+
+        switch (pilihan) {
+            case 1:
+                tampilArray(arr, MAX);
+                break;
+
+            case 2:
+                cout << "Nilai maksimum = "
+                     << nilaiMaksimum(arr, MAX) << endl;
+                break;
+
+            case 3:
+                cout << "Nilai minimum = "
+                     << nilaiMinimum(arr, MAX) << endl;
+                break;
+
+            case 4:
+                hitungRataRata(arr, MAX, rata);
+                cout << "Nilai rata-rata = " << rata << endl;
+                break;
+
+            case 5:
+                cout << "Program selesai.\n";
+                break;
+
+            default:
+                cout << "Pilihan tidak tersedia.\n";
+        }
+
+    } while (pilihan != 5);
 
     return 0;
 }
@@ -373,16 +451,19 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/output/output-soal3.png)
+![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL%202/OUTPUT/OUTPUT%203%20M2.png)
 
-Program ini digunakan untuk membuat pola angka berbentuk mirror. Perulangan for pertama mengatur jumlah baris, sedangkan for berikutnya digunakan untuk mencetak angka dari belakang ke depan dan dari depan ke belakang. Bagian cout << " * " digunakan sebagai tanda * di tengah pola, sementara perulangan spasi membuat bentuk pola semakin menjorok ke kanan.
+Program ini digunakan untuk mengolah data array, seperti menampilkan isi array, mencari nilai maksimum dan minimum, serta menghitung nilai rata-rata melalui menu pilihan.
+
 
 ## Kesimpulan
 
-Dari ketiga program tersebut, dapat dipahami penggunaan dasar C++ seperti **input/output, tipe data, operator, percabangan, array, dan perulangan**. Ketiga konsep tersebut dapat digunakan untuk membuat program perhitungan, mengubah angka menjadi tulisan, serta membuat pola menggunakan perulangan.
+Berdasarkan beberapa program yang telah dibuat, dapat disimpulkan bahwa C++ memiliki berbagai konsep penting seperti array, pointer, fungsi, parameter, dan reference. Konsep tersebut dapat digunakan untuk mengolah data, mencari nilai maksimum dan minimum, menghitung rata-rata, melakukan operasi matriks, serta menukar nilai variabel. Dengan memahami konsep-konsep tersebut, program dapat dibuat lebih terstruktur dan mudah dipahami.
+
 
 
 ## Referensi
 
-[1] Triase. (2020). Diktat Edisi Revisi : STRUKTUR DATA. Medan: UNIVERSTAS ISLAM NEGERI SUMATERA UTARA MEDAN.
-<br>[2] Indahyati, Uce., Rahmawati Yunianita. (2020). "BUKU AJAR ALGORITMA DAN PEMROGRAMAN DALAM BAHASA C++". Sidoarjo: Umsida Press. Diakses pada 10 Maret 2024 melalui https://doi.org/10.21070/2020/978-623-6833-67-4.<br>[1] Modul Praktikum Struktur Data 1, “Code Blocks IDE & Pengenalan Bahasa C++ (Bagian Pertama)”, Program Studi Informatika, 2026.<br>[2] L. J. E. Dewi, “Media Pembelajaran Bahasa Pemrograman C++,” Jurnal Pendidikan Teknologi dan Kejuruan, vol. 7, no. 1, 2010.<br>[3] A. Kadir, Dasar Pemrograman C++, Yogyakarta: Andi, 2014.<br>[4] B. S. Sidik, Pemrograman C++, Bandung: Informatika, 2012.
+[1] Kadir. (2019). Dasar Pemrograman C++. Yogyakarta: Andi. <br>
+[2] Sianipar, R. H. (2015). Pemrograman C++ untuk Pemula. Jakarta: Elex Media Komputindo. <br>
+[3] Kurniawan, E. (2019). Belajar C++. Bandung: Informatika. <br>
