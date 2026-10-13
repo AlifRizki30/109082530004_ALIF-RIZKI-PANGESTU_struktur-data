@@ -7,8 +7,6 @@
 ### A. Konsep Abstract Data Type (ADT)  <br/>
    Abstract Data Type (ADT) merupakan konsep dalam struktur data yang menggabungkan definisi tipe data dengan sekumpulan operasi dasar untuk mengolah data tersebut. ADT membantu program menjadi lebih terstruktur karena data dan operasi yang digunakan untuk mengolahnya memiliki pembagian tugas yang jelas.
 
-
-
 #### 1. Pengertian Abstract Data Type (ADT)
    ADT adalah tipe data yang terdiri dari definisi tipe dan sekumpulan operasi dasar atau primitif yang digunakan untuk mengolah data tersebut.
 
@@ -81,7 +79,6 @@ bool checkPenulis(buku buku);
 #endif
 ```
 
-Program ini digunakan untuk menginput 5 nilai siswa dan menampilkan data nilai dalam array 2 dimensi menggunakan perulangan for.
 
 ### 2. buku.cpp
 
@@ -105,8 +102,6 @@ bool checkPenulis(buku buku)
     return buku.penulis == "";
 }
 ```
-
-Program ini menunjukkan penggunaan pointer untuk menyimpan alamat variabel x dan mengambil nilainya melalui px, kemudian menyimpannya ke variabel y.
 
 
 ### 3. main.cpp
@@ -138,8 +133,12 @@ int main (){
     return 0;
 }
 ```
+### Output guided 1 :
 
-Program ini digunakan untuk mencari nilai terbesar dari tiga bilangan dengan menggunakan fungsi maks3().
+##### Output 1
+
+![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL3/output/guided.png)
+File buku.h berfungsi sebagai header yang berisi deklarasi struktur data buku dengan atribut judul, halaman, dan penulis, serta deklarasi fungsi untuk mengisi, menampilkan, dan memeriksa data buku. File buku.cpp berisi implementasi ketiga fungsi tersebut, yaitu editIsi() untuk mengisi data buku, tampilanIsiBuku() untuk menampilkan informasi buku, dan checkPenulis() untuk memeriksa apakah nama penulis kosong. Sementara itu, file main.cpp merupakan program utama yang meminta pengguna memasukkan judul, jumlah halaman, dan nama penulis, kemudian menyimpan data tersebut ke objek novel, menampilkan informasi buku, serta menampilkan hasil pemeriksaan nama penulis. Ketiga file ini bekerja sama untuk menerapkan konsep Abstract Data Type (ADT) dalam bahasa C++ agar program lebih terstruktur dan mudah dipahami.
 
 
 ## Unguided
