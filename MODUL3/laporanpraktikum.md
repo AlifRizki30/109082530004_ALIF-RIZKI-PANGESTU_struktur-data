@@ -252,23 +252,228 @@ int main() {
 }
 
 ```
-### Output Unguided 3 :
+### Output Unguided 1 :
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL%202/OUTPUT/OUTPUT%203%20M2.png)
+![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL3/output/soal1.png)
+Program ini dibuat untuk menyimpan data maksimal 10 mahasiswa dalam sebuah array. Setiap mahasiswa memiliki data nama, NIM, nilai UTS, UAS, tugas, dan nilai akhir. Nilai akhir dihitung menggunakan fungsi hitungNilaiAkhir() dengan rumus 30% nilai UTS, 40% nilai UAS, dan 30% nilai tugas. Program juga menggunakan fungsi inputMahasiswa() untuk memasukkan data dan tampilMahasiswa() untuk menampilkan seluruh data mahasiswa beserta nilai akhirnya.
 
-Program ini digunakan untuk mengolah data array, seperti menampilkan isi array, mencari nilai maksimum dan minimum, serta menghitung nilai rata-rata melalui menu pilihan.
 
+## soal2
+
+### 1. pelajaran.cpp
+```C++
+
+#include <iostream>
+#include "pelajaran.h"
+
+using namespace std;
+
+pelajaran create_pelajaran(string namapel, string kodepel) {
+    pelajaran pel;
+
+    pel.namaMapel = namapel;
+    pel.kodeMapel = kodepel;
+
+    return pel;
+}
+
+void tampil_pelajaran(pelajaran pel) {
+    cout << "Nama Mata Pelajaran: "
+         << pel.namaMapel << endl;
+
+    cout << "Kode Mata Pelajaran: "
+         << pel.kodeMapel << endl;
+}
+```
+### 2. pelajaran.h
+
+```C++
+
+#ifndef PELAJARAN_H
+#define PELAJARAN_H
+
+#include <string>
+using namespace std;
+
+struct pelajaran {
+    string namaMapel;
+    string kodeMapel;
+};
+
+pelajaran create_pelajaran(string namapel, string kodepel);
+void tampil_pelajaran(pelajaran pel);
+
+#endif
+```
+
+### 3. main.cpp
+```C++
+
+#include <iostream>
+#include "pelajaran.h"
+
+using namespace std;
+
+int main() {
+    string namapel = "Struktur Data";
+    string kodepel = "STD";
+
+    pelajaran pel = create_pelajaran(namapel, kodepel);
+
+    tampil_pelajaran(pel);
+
+    return 0;
+}
+
+```
+### Output Unguided 2 :
+
+##### Output 1
+
+![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL3/output/soal2.png)
+Program ini dibuat untuk menerapkan ADT pelajaran yang menyimpan nama dan kode mata pelajaran. Fungsi create_pelajaran() digunakan untuk membuat objek pelajaran dan mengisi atributnya, sedangkan prosedur tampil_pelajaran() digunakan untuk menampilkan nama dan kode mata pelajaran. Program ini memisahkan deklarasi, implementasi, dan program utama ke dalam file pelajaran.h, pelajaran.cpp, dan main.cpp agar kode lebih terstruktur dan mudah dipahami.
+## soal1
+
+### 1. array2d.cpp
+```C++
+
+#include <iostream>
+#include "array2d.h"
+
+using namespace std;
+
+void tampilArray(int arr[BARIS][KOLOM]) {
+    for (int i = 0; i < BARIS; i++) {
+        for (int j = 0; j < KOLOM; j++) {
+            cout << arr[i][j] << "\t";
+        }
+        cout << endl;
+    }
+}
+
+void tukarElemen(
+    int A[BARIS][KOLOM],
+    int B[BARIS][KOLOM],
+    int baris,
+    int kolom
+) {
+    int sementara = A[baris][kolom];
+    A[baris][kolom] = B[baris][kolom];
+    B[baris][kolom] = sementara;
+}
+
+void tukarPointer(int *p1, int *p2) {
+    int sementara = *p1;
+    *p1 = *p2;
+    *p2 = sementara;
+}
+```
+### 2. mahasiswa.h
+
+```C++
+#ifndef ARRAY2D_H
+#define ARRAY2D_H
+
+const int BARIS = 3;
+const int KOLOM = 3;
+
+void tampilArray(int arr[BARIS][KOLOM]);
+void tukarElemen(
+    int A[BARIS][KOLOM],
+    int B[BARIS][KOLOM],
+    int baris,
+    int kolom
+);
+void tukarPointer(int *p1, int *p2);
+
+#endif
+```
+
+### 3. main.cpp
+```C++
+
+#include <iostream>
+#include "array2d.h"
+
+using namespace std;
+
+int main() {
+    int A[BARIS][KOLOM] = {
+        {1, 2, 3},
+        {4, 5, 6},
+        {7, 8, 9}
+    };
+
+    int B[BARIS][KOLOM] = {
+        {10, 11, 12},
+        {13, 14, 15},
+        {16, 17, 18}
+    };
+
+    cout << "Array A sebelum ditukar:\n";
+    tampilArray(A);
+
+    cout << "\nArray B sebelum ditukar:\n";
+    tampilArray(B);
+
+    int baris, kolom;
+
+    cout << "\nMasukkan baris (1-3): ";
+    cin >> baris;
+
+    cout << "Masukkan kolom (1-3): ";
+    cin >> kolom;
+
+    if (baris < 1 || baris > 3 ||
+        kolom < 1 || kolom > 3) {
+        cout << "Posisi tidak valid!" << endl;
+        return 1;
+    }
+
+    tukarElemen(A, B, baris - 1, kolom - 1);
+
+    cout << "\nArray A setelah pertukaran:\n";
+    tampilArray(A);
+
+    cout << "\nArray B setelah pertukaran:\n";
+    tampilArray(B);
+
+    int x = 100;
+    int y = 200;
+
+    int *p1 = &x;
+    int *p2 = &y;
+
+    cout << "\nSebelum pertukaran pointer:\n";
+    cout << "x = " << x << endl;
+    cout << "y = " << y << endl;
+
+    tukarPointer(p1, p2);
+
+    cout << "\nSetelah pertukaran pointer:\n";
+    cout << "x = " << x << endl;
+    cout << "y = " << y << endl;
+
+    return 0;
+}
+
+```
+### Output Unguided 3 :
+
+##### Output 3
+
+![Screenshot Output Unguided 3_3](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL3/output/soal3.png)
+Program ini dibuat untuk mengolah dua array integer dua dimensi berukuran 3×3 dan menggunakan dua pointer integer. Prosedur tampilArray() digunakan untuk menampilkan isi array, sedangkan tukarElemen() digunakan untuk menukar elemen dari dua array pada posisi tertentu. Selain itu, prosedur tukarPointer() digunakan untuk menukar nilai dua variabel melalui pointer dengan bantuan operator dereferensi *.
 
 ## Kesimpulan
 
-Berdasarkan beberapa program yang telah dibuat, dapat disimpulkan bahwa C++ memiliki berbagai konsep penting seperti array, pointer, fungsi, parameter, dan reference. Konsep tersebut dapat digunakan untuk mengolah data, mencari nilai maksimum dan minimum, menghitung rata-rata, melakukan operasi matriks, serta menukar nilai variabel. Dengan memahami konsep-konsep tersebut, program dapat dibuat lebih terstruktur dan mudah dipahami.
-
+Berdasarkan ketiga soal praktikum Struktur Data, dapat disimpulkan bahwa konsep Abstract Data Type (ADT) membantu membuat program lebih terstruktur dengan memisahkan deklarasi tipe data, implementasi fungsi, dan program utama ke dalam file .h, .cpp, dan main.cpp. Pada soal pertama, ADT digunakan untuk menyimpan data mahasiswa dan menghitung nilai akhir. Pada soal kedua, ADT digunakan untuk membuat dan menampilkan data mata pelajaran. Sementara itu, pada soal ketiga, array dua dimensi dan pointer digunakan untuk menampilkan serta menukar elemen array dan nilai variabel. Dengan mengerjakan ketiga soal tersebut, konsep ADT, penggunaan array, fungsi, prosedur, dan pointer dalam bahasa C++ dapat dipahami dengan lebih baik.
 
 
 ## Referensi
 
-[1] Kadir. (2019). Dasar Pemrograman C++. Yogyakarta: Andi. <br>
-[2] Sianipar, R. H. (2015). Pemrograman C++ untuk Pemula. Jakarta: Elex Media Komputindo. <br>
-[3] Kurniawan, E. (2019). Belajar C++. Bandung: Informatika. <br>
+[1]. Modul Praktikum Struktur Data. (t.t.). Modul 3: Abstract Data Type (ADT), hlm. 32–35. Bahan ajar praktikum Struktur Data.
+[2]. Malik, D. S. (2010). C++ Programming: From Problem Analysis to Program Design (5th ed.). Cengage Learning.
+[3]. Deitel, P., & Deitel, H. (2017). C++ How to Program (10th ed.). Pearson.
