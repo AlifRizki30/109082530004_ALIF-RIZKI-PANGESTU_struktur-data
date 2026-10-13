@@ -333,7 +333,8 @@ int main() {
 
 ![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL3/output/soal2.png)
 Program ini dibuat untuk menerapkan ADT pelajaran yang menyimpan nama dan kode mata pelajaran. Fungsi create_pelajaran() digunakan untuk membuat objek pelajaran dan mengisi atributnya, sedangkan prosedur tampil_pelajaran() digunakan untuk menampilkan nama dan kode mata pelajaran. Program ini memisahkan deklarasi, implementasi, dan program utama ke dalam file pelajaran.h, pelajaran.cpp, dan main.cpp agar kode lebih terstruktur dan mudah dipahami.
-## soal1
+
+## soal3
 
 ### 1. array2d.cpp
 ```C++
