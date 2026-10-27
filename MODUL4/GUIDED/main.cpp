@@ -1,40 +1,45 @@
+#include "list.h"
 #include <iostream>
-#include "List.h"
-
 using namespace std;
 
 int main(){
+	linkedlist List;
+    address nodeA, nodeB, nodeC, nodeD, nodeE = Nil;
+    createList(List);
 
-    LinkedList L;
-    address nodeA = Nil, nodeB = Nil, nodeC = Nil, nodeD = Nil, nodeE = Nil;
-    createList(L);
+    nodeA = alokasi("Dhimas", "2311102151", 20);
+    nodeB = alokasi("Arvin", "2211110014", 21);
+    nodeC = alokasi("Rizal", "2311110029", 20);
+    nodeD = alokasi("Satrio", "2211102173", 21);
+    nodeE = alokasi("Joshua", "2311102133", 21);
 
-    nodeA = alokasi(20, "Dhimas", "2311102151");
-    nodeB = alokasi(21, "Arvin",  "2311102152");
-    nodeC = alokasi(20, "Budi",   "2311102153");
-    nodeD = alokasi(22, "Citra",  "2311102154");
-    nodeE = alokasi(19, "Dina",   "2311102155");
+    insertFirst(List, nodeA);
+    insertLast(List, nodeB);
+    insertAfter(List, nodeC, nodeA);
+    insertAfter(List, nodeD, nodeC);
+    insertLast(List, nodeE);
 
-    insertFirst(L, nodeA);          
-    insertLast(L, nodeB);         
-    insertAfter(L, nodeA, nodeC);   
-    insertFirst(L, nodeD);         
-    insertLast(L, nodeE);          
+    cout << "--- ISI LIST SETELAH DILAKUKAN INSERT ---" << endl;
+    printList(List);
+    cout << "jumlah node : " << nbList(List) << endl;
+    cout << endl;
 
-    cout << "Isi list:" << endl;
-    printList(L);
-    cout << "Jumlah node: " << nbList(L) << endl;
+    // updateFirst(List);
+    // cout << "--- ISI LIST SETELAH DILAKUKAN UPDATE FIRST --- " << endl;
+    // updateList(List);
 
-    delfirst(L);                   
-    delLast(L);                     
-    delAfter(L, L.first, Nil);  
+    // updateLast(List);
+    // cout << "--- ISI LIST SETELAH DILAKUKAN UPDATE LAST --- " << endl;
+    // updateList(List);
 
-    cout << "\nSetelah penghapusan:" << endl;
-    printList(L);
-    cout << "Jumlah node: " << nbList(L) << endl;
+    // updateAfter(List, nodeB);
+    // cout << "--- ISI LIST SETELAH DILAKUKAN UPDATE AFTER NODE B --- " << endl;
+    // updateList(List);
 
-    delList(L);                  
-    cout << "\nSetelah delList, jumlah node: " << nbList(L) << endl;
+    updateByNim(List, "2211110014" );
+    cout << "--- ISI LIST SETELAH DILAKUKAN UPDATE BY NIM --- " << endl;
+    updateList(List);
 
+    
     return 0;
 }

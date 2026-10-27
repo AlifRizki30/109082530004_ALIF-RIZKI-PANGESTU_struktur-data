@@ -1,38 +1,49 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
+#ifndef List_h
+#define List_h
 #define Nil NULL
 
 #include <iostream>
 using namespace std;
 
-typedef struct Node *address;
-
-struct student {
-    int age;
-    string name, id;
+struct mahasiswa
+{
+    string nama, nim;
+    int umur;
 };
 
-struct Node {
-    student data;
+typedef mahasiswa dataMahasiswa;
+typedef struct node *address;
+
+struct node
+{
+    dataMahasiswa isidata;
     address next;
 };
 
-struct LinkedList {
+struct linkedlist
+{
     address first;
 };
 
-bool isEmpty(LinkedList L);
-void createList(LinkedList &L);
-address alokasi(int age, string name, string id);
-void dealokasi(address &P);
-void printList(LinkedList L);
-void insertFirst(LinkedList &L, address P);
-void insertAfter(LinkedList &L, address Prev, address P);
-void insertLast(LinkedList &L, address P);
+bool isEmpty(linkedlist List);
+void createList(linkedlist &List);
+address alokasi(string nama, string nim, int umur);
+void dealokasi(address &node);
+void printList(linkedlist list);
+void insertFirst(linkedlist &list, address nodeBaru);
+void insertAfter(linkedlist &list, address nodeBaru, address prev);
+void insertLast(linkedlist &list, address nodeBaru);
 
-void delfirst(LinkedList &L);
-void delAfter(LinkedList &L, address Prev, address P);
-void delLast(LinkedList &L);
-int nbList(LinkedList L);
-void delList(LinkedList &L);
+void delFirst(linkedlist &list);
+void delLast(linkedlist &list);
+void delAfter(linkedlist &list, address nodeHapus, address nodePrev);
+int nbList(linkedlist list);
+void deleteList(linkedlist &list);
+
+void updateFirst(linkedlist &list);
+void updateLast(linkedlist &list);
+void updateAfter(linkedlist list, address &prev);
+void updateByNim(linkedlist &list, string nim);
+
+address findNodeByData(linkedlist List, string data);
 #endif
