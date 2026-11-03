@@ -888,7 +888,8 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL5/OUTPUT/SOAL.png)
+![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL6/OUTPUT/OUTPUT1.png)
+(https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL6/OUTPUT/OUTPUT2.png)
 Kode ini mengimplementasikan Doubly Linked List untuk menyimpan data kendaraan (nomor polisi, warna, tahun buat), dengan tiga file: doublylist.h (struct dan deklarasi fungsi), doublylist.cpp (implementasi), dan main.cpp (program utama). Setiap node memiliki pointer next dan prev, dan fungsi yang tersedia meliputi pembuatan list dan node (createList, alokasi, dealokasi), penyisipan di awal dan akhir, penampilan list, pencarian berdasarkan nomor polisi (findElm), serta penghapusan di awal, akhir, atau setelah node tertentu. Di main, pengguna memasukkan empat data kendaraan yang disisipkan di awal list (data dengan nomor polisi yang sudah ada ditolak), lalu list dicetak, pengguna mencari satu nomor polisi, kemudian menghapus satu data berdasarkan nomor polisi (dengan memilih fungsi hapus sesuai posisinya), dan list akhir dicetak kembali.
 
 
