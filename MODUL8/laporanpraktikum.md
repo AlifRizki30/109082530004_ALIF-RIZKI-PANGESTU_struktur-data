@@ -674,7 +674,7 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL7/OUTPUT/Screenshot%202026-11-17%20183807.png)
+![Screenshot Output Unguided 1_1](https://github.com/AlifRizki30/109082530004_ALIF-RIZKI-PANGESTU_struktur-data/blob/main/MODUL8/OUTPUT/OUTPUTSOAL.png)
 
 Kode ini adalah implementasi Queue (antrian) berbasis array berukuran 5 elemen dalam C++ yang dibagi menjadi tiga file: queue.h untuk deklarasi, queue.cpp untuk isi fungsi, dan main.cpp untuk pengujian. Ada tiga alternatif cara kerja: Alternatif 1 menggeser semua elemen ke depan setiap kali dequeue sehingga head selalu di indeks 0, Alternatif 2 hanya menaikkan head saat dequeue dan baru menggeser elemen ketika tail sudah di indeks terakhir, sedangkan Alternatif 3 memakai circular queue dengan modulo (% 5) tanpa perlu menggeser elemen. Ketiganya diuji dengan urutan operasi yang sama di main.cpp, lalu hasilnya ditampilkan lewat printInfo supaya perbedaan perilaku head dan tail di tiap alternatif terlihat jelas.
 
